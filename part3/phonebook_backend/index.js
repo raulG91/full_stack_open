@@ -35,7 +35,8 @@ function getRandomInt(max) {
 app.use(morgan('tiny'))
 app.use(cors())
 app.use(express.json())
-
+//Middleware to serve static files, html in this case
+app.use(express.static('dist'))
 app.get('/api/persons', (req, res) => {
 
     res.json(persons).status(200)

@@ -66,8 +66,9 @@ function App() {
         setNotificationMessage(null)
       }, 5000)
     }).catch(error => {
-      console.log(error)
-    })
+      setNotificationType('error')
+      setNotificationMessage(error.response.data.error)
+        })
 
   }
   const handleOnChangeSearch = (event) => {
